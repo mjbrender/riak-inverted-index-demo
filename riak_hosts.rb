@@ -35,12 +35,12 @@ class RiakHosts
   def read_line(line)
     parts = line.split(':')
     if parts.length == 1
-      return [parts[0], 8087]
+      return [parts[0], 27017]
     elsif parts.length == 2
       return [parts[0], parts[1].to_i]
     else
       puts 'Line does not conform to expected hostname:port format'
-      return ['localhost', 8087]
+      return ['localhost', 27017]
     end
 
   end
