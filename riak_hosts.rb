@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require('riak')
+require 'riak'
 
 class Host
   attr_accessor :hostname, :port

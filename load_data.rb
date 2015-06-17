@@ -1,13 +1,12 @@
 require 'bundler/setup'
 require('riak')
-require('riak_crdts')
 require('./riak_hosts')
 require('./models/zombie')
 
 def load_data(filename)
   logname = "load_progress.txt"
   client = RiakHosts.new.get_riak_connection
-  zip3 = RiakCrdts::InvertedIndex.new(client, 'zip3_inv')
+  zip3 = Riak::RObject.new(client, 'zip3_inv')
   log = File.open(logname, "a+")
   target_i = -1
 
