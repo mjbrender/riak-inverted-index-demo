@@ -13,7 +13,7 @@ class Zombie
 
     @client = client
     if client.nil?
-      @client = Riak::Client.new(:protocol => 'pbc') if client.nil?
+      @client = Riak::Client.new(:protocol => 'pbc', :pb_port => 8087) if client.nil?
     end
   end
 
